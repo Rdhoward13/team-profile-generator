@@ -1,17 +1,19 @@
-const Intern = require("../lib/Intern");
-
-// TEST THE WHOEL OBJECT
-// test("describe what this tests purpose is")
-test("creates an intern object containing specified values", () => {
-  // create a varibale that we can use to run a test on
-  const Intern = new Intern("Rachel", 2, "rachel@gmail.com", "Ohio State");
-  // this is the actual test - employee.name should return a string
-  expect(Intern.school).toEqual(expect.any(String));
+const Intern = require("../lib/intern");
+// Creating intern object
+test("creates an Intern object", () => {
+  const intern = new Intern("Rachel", 1, "Rachel@gmail.com", "Ohio State");
+  expect(intern.school).toEqual(expect.any(String));
 });
 
-// TEST getHub() METHOD
-test("gets the interns school", () => {
-  const Intern = new Intern("Rachel", 2, "rachel@gmail.com", "Ohio State");
-
-  expect(Intern.getSchool()).toEqual(expect.any(String));
+// Gets getSchool()
+test("gets employee school", () => {
+  const intern = new Intern("Rachel", 1, "Rachel@gmail.com", "Ohio State");
+  expect(intern.getSchool()).toEqual(
+    expect.stringContaining(intern.school.toString())
+  );
+});
+// Gets getRole()
+test("gets role of employee", () => {
+  const intern = new Intern("Rachel", 1, "Rachel@gmail.com", "Ohio State");
+  expect(intern.getRole()).toEqual("Intern");
 });

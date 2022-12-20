@@ -1,4 +1,4 @@
-const Employee = require("../lib/Employee");
+const Employee = require("../lib/employee");
 
 // TEST THE WHOEL OBJECT
 // test("describe what this tests purpose is")
